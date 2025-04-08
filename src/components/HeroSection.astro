@@ -1,0 +1,11 @@
+import { Image } from "astro:assets"
+
+export interface Props {
+  title: string
+  subtitle: string
+  scrollText: string
+  videoSrc: string
+  lang: string
+}
+
+const { title, subtitle, scrollText, videoSrc, lang } = Astro.props

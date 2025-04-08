@@ -1,0 +1,45 @@
+export interface Props {
+  theme?: "light" | "dark"
+  lang: string
+}
+
+const { theme = "light", lang } = Astro.props
+
+const translations = {
+  en: {
+    title: "Book Your Session",
+    name: "Full Name",
+    email: "Email",
+    phone: "Phone",
+    dueDate: "Due Date (if applicable)",
+    sessionType: "Session Type",
+    gestacion: "Pregnancy",
+    nacimiento: "Birth",
+    postparto: "Postpartum",
+    maternidad: "Motherhood",
+    message: "Message",
+    submit: "Submit",
+    required: "Required field",
+    success: "Thank you! We'll be in touch soon.",
+    error: "There was an error submitting the form. Please try again.",
+  },
+  es: {
+    title: "Reserva Tu Sesión",
+    name: "Nombre Completo",
+    email: "Correo Electrónico",
+    phone: "Teléfono",
+    dueDate: "Fecha Estimada (si aplica)",
+    sessionType: "Tipo de Sesión",
+    gestacion: "Gestación",
+    nacimiento: "Nacimiento",
+    postparto: "Postparto",
+    maternidad: "Maternidad",
+    message: "Mensaje",
+    submit: "Enviar",
+    required: "Campo requerido",
+    success: "¡Gracias! Nos pondremos en contacto pronto.",
+    error: "Hubo un error al enviar el formulario. Por favor intenta de nuevo.",
+  },
+}
+
+const t = translations[lang as keyof typeof translations]

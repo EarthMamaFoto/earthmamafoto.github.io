@@ -1,0 +1,20 @@
+export interface Props {
+  lang: string
+}
+
+const { lang } = Astro.props
+
+const translations = {
+  en: {
+    rights: "All rights reserved",
+    privacy: "Privacy Policy",
+    terms: "Terms of Service",
+  },
+  es: {
+    rights: "Todos los derechos reservados",
+    privacy: "Política de Privacidad",
+    terms: "Términos de Servicio",
+  },
+}
+
+const t = translations[lang as keyof typeof translations]

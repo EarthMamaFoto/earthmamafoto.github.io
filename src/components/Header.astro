@@ -1,0 +1,27 @@
+import LanguageSwitcher from "./LanguageSwitcher.astro"
+import Logo from "./Logo.astro"
+
+export interface Props {
+  lang: string
+}
+
+const { lang } = Astro.props
+
+const translations = {
+  en: {
+    menu: "Menu",
+    home: "Home",
+    about: "About",
+    portfolio: "Portfolio",
+    contact: "Contact",
+  },
+  es: {
+    menu: "Menú",
+    home: "Inicio",
+    about: "Sobre mí",
+    portfolio: "Portafolio",
+    contact: "Contacto",
+  },
+}
+
+const t = translations[lang as keyof typeof translations]

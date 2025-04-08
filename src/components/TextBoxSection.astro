@@ -1,0 +1,8 @@
+export interface Props {
+  title: string
+  content: string
+  theme?: "light" | "dark"
+  lang: string
+}
+
+const { title, content, theme = "dark", lang } = Astro.props

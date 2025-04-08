@@ -1,0 +1,8 @@
+export interface Props {
+  title: string
+  videoSrc: string
+  theme?: "light" | "dark"
+  lang: string
+}
+
+const { title, videoSrc, theme = "dark", lang } = Astro.props

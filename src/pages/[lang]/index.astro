@@ -1,0 +1,28 @@
+import Layout from "../../layouts/Layout.astro"
+import HeroSection from "../../components/HeroSection.astro"
+import CategorySection from "../../components/CategorySection.astro"
+import TextBoxSection from "../../components/TextBoxSection.astro"
+import TextAndVideoSection from "../../components/TextAndVideoSection.astro"
+import ContactFormSection from "../../components/ContactFormSection.astro"
+import FinalSection from "../../components/FinalSection.astro"
+import { getHomePage } from "../../lib/datocms"
+
+export async function getStaticPaths() {
+  return [{ params: { lang: "en" } }, { params: { lang: "es" } }]
+}
+
+const { lang } = Astro.params
+const homePage = await getHomePage(lang || "en")
+
+const translations = {
+  en: {
+    title: "Karina Elizondo Photography",
+    description: "Capturing the beauty of motherhood through artistic photography",
+  },
+  es: {
+    title: "Fotografía de Karina Elizondo",
+    description: "Capturando la belleza de la maternidad a través de la fotografía artística",
+  },
+}
+
+const t = translations[lang as keyof typeof translations]
