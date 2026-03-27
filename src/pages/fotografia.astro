@@ -61,18 +61,18 @@ const photoList = [
       </div>
     </section>
   </main>
+  
+  <!-- Lightbox modal -->
+  <div id="gallery-lightbox" class="fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+    <div class="absolute inset-0 bg-black/90" id="lightbox-backdrop"></div>
+    <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-10">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6 6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <img id="lightbox-img" src="" alt="" class="max-w-[90vw] max-h-[90vh] object-contain" />
+  </div>
 </BaseLayout>
-
-<!-- Lightbox modal -->
-<div id="gallery-lightbox" class="fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
-  <div class="absolute inset-0 bg-black/90" id="lightbox-backdrop"></div>
-  <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-10">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M18 6 6 18M6 6l12 12"/>
-    </svg>
-  </button>
-  <img id="lightbox-img" src="" alt="" class="max-w-[90vw] max-h-[90vh] object-contain" />
-</div>
 
 <script>
 function initGalleryLightbox() {
