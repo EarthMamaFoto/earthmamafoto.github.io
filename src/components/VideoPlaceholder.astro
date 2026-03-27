@@ -1,9 +1,10 @@
 ---
 interface Props {
   videoUrl?: string;
+  mediaType?: string;
   thumbnail?: string;
 }
-const { videoUrl = '', thumbnail = '' } = Astro.props;
+const { videoUrl = '', mediaType = '', thumbnail = '' } = Astro.props;
 ---
 
 <div
@@ -11,6 +12,7 @@ const { videoUrl = '', thumbnail = '' } = Astro.props;
     'w-full aspect-video bg-video-placeholder flex items-center justify-center cursor-pointer hover:scale-[1.02] transition-transform duration-300 group relative',
   ]}
   data-video-url={videoUrl}
+  data-media-type={mediaType}
   data-video-trigger
 >
   {thumbnail && (

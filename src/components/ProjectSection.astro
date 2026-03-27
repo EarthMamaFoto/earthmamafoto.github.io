@@ -10,6 +10,7 @@ interface Props {
   descriptionEn?: string;
   order?: number;
   videoUrl?: string;
+  mediaType?: string;
   thumbnail?: string;
   links?: Array<{ title: string; url: string; type?: string }>;
 }
@@ -22,6 +23,7 @@ const {
   descriptionEn = '',
   order,
   videoUrl = '',
+  mediaType = '',
   thumbnail = '',
   links = [],
 } = Astro.props;
@@ -44,13 +46,13 @@ const displayNumber = String(order || index + 1).padStart(2, '0');
         <ProjectLinks links={links} />
       </div>
       <div class="w-full order-1 md:order-2">
-        <VideoPlaceholder videoUrl={videoUrl} thumbnail={thumbnail} />
+        <VideoPlaceholder videoUrl={videoUrl} mediaType={mediaType} thumbnail={thumbnail} />
       </div>
     </>
   ) : (
     <>
       <div class="w-full order-1">
-        <VideoPlaceholder videoUrl={videoUrl} thumbnail={thumbnail} />
+        <VideoPlaceholder videoUrl={videoUrl} mediaType={mediaType} thumbnail={thumbnail} />
       </div>
       <div class="flex-1 flex flex-col gap-4 md:gap-5 justify-center max-w-[500px] order-2">
         <span class="font-mono text-[13px] font-medium tracking-[2px] text-accent-ochre">
