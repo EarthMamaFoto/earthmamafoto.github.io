@@ -196,6 +196,12 @@ if (hasSanityConfig) {
     </a>
   </section>
 
+  <!-- Audiovisual projects section -->
+  <section class="px-6 md:px-[120px] py-8 border-b border-border-warm">
+    <h2 class="font-display text-[28px] md:text-[36px] text-text-primary" data-es>Audiovisual</h2>
+    <h2 class="font-display text-[28px] md:text-[36px] text-text-primary hidden" data-en>Audiovisual</h2>
+  </section>
+
   {projects.map((project, i) => {
     const firstMedia = project.media?.[0];
     const thumbnail = getThumbnailUrl(project);
