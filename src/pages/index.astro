@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import ProjectSection from '../components/ProjectSection.astro';
 import VideoModal from '../components/VideoModal.astro';
+import ContactModal from '../components/ContactModal.astro';
 import Footer from '../components/Footer.astro';
 import { client } from '../../sanity/lib/client';
 import { allProjectsQuery, siteSettingsQuery, getThumbnailUrl } from '../lib/queries';
@@ -28,7 +29,6 @@ interface SiteSettings {
   footerQuoteTitleEn: string;
   footerQuoteEs: string;
   footerQuoteEn: string;
-  colaboremosEmail: string;
   socialLinks: Array<{ platform: string; url: string }>;
 }
 
@@ -68,7 +68,7 @@ const fallbackProjects: Project[] = [
     description: 'Exploración visual de la mujer y su conexión con la naturaleza salvaje.',
     descriptionEn: 'Visual exploration of woman and her connection to wild nature.',
     order: 3,
-    thumbnailUrl: '',
+    thumbnailUrl: '/img/msalvaje.webp',
     media: [
       { title: 'Tráiler', url: 'https://drive.google.com/file/d/1ZfDQrP0cDI3bJjveYfg6Val3QhMfJbE4/preview', type: 'drive' },
       { title: 'Reel', url: 'https://www.instagram.com/reel/DF0aNbLReEi/', type: 'instagram' },
@@ -108,7 +108,7 @@ const fallbackProjects: Project[] = [
     description: 'Contenido audiovisual profesional para ESD.',
     descriptionEn: 'Professional audiovisual content for ESD.',
     order: 6,
-    thumbnailUrl: '',
+    thumbnailUrl: '/img/ESD.webp',
     media: [
       { title: 'Video', url: 'https://drive.google.com/file/d/1c7O1Vxg8Cjc7NoKbyznwow-vk8fjfI4G/preview', type: 'drive' },
     ],
@@ -120,7 +120,7 @@ const fallbackProjects: Project[] = [
     description: 'Curso online de empoderamiento para mujeres.',
     descriptionEn: 'Online empowerment course for women.',
     order: 7,
-    thumbnailUrl: '',
+    thumbnailUrl: '/img/curso.webp',
     media: [
       { title: 'Curso Online', url: 'https://hotmart.com/es/marketplace/productos/mujeresfuertes/M53477666S', type: 'external' },
     ],
@@ -132,7 +132,7 @@ const fallbackProjects: Project[] = [
     description: 'Reels y contenido corto para diversos clientes.',
     descriptionEn: 'Reels and short-form content for various clients.',
     order: 8,
-    thumbnailUrl: '',
+    thumbnailUrl: '/img/freelance.webp',
     media: [
       { title: 'Janzu', url: 'https://www.instagram.com/reel/C6M3CqXxSET/', type: 'instagram' },
       { title: 'Hilando Fino', url: 'https://www.instagram.com/reel/CtH17SPLkLO/', type: 'instagram' },
@@ -151,7 +151,6 @@ const fallbackSettings: SiteSettings = {
   footerQuoteTitleEn: '« Gratitude for the recognition »',
   footerQuoteEs: 'Mi intención es mostrar una pincelada de proyectos en los que he dirigido, colaborado o participado con mucho amor y dedicación.',
   footerQuoteEn: 'My intention is to show a glimpse of projects I have directed, collaborated on, or participated in with much love and dedication.',
-  colaboremosEmail: '',
   socialLinks: [],
 };
 
@@ -209,9 +208,9 @@ if (hasSanityConfig) {
     footerQuoteTitleEn={settings.footerQuoteTitleEn}
     footerQuoteEs={settings.footerQuoteEs}
     footerQuoteEn={settings.footerQuoteEn}
-    colaboremosEmail={settings.colaboremosEmail}
     socialLinks={settings.socialLinks}
   />
 
   <VideoModal />
+  <ContactModal />
 </BaseLayout>

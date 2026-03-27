@@ -37,7 +37,6 @@ export const siteSettingsQuery = `*[_type == "siteSettings"][0] {
   footerQuoteTitleEn,
   footerQuoteEs,
   footerQuoteEn,
-  colaboremosEmail,
   socialLinks[] {
     platform,
     url
