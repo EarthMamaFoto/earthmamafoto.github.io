@@ -181,6 +181,17 @@ if (hasSanityConfig) {
     heroTaglineEn={settings.heroTaglineEn}
   />
 
+  <!-- Fotografía preview section -->
+  <section class="w-full">
+    <a href="/fotografia" class="flex overflow-x-auto">
+      <img src="/photos/DSC00329.webp" alt="" class="w-[50vw] h-[50vh] object-cover flex-shrink-0" loading="lazy" />
+      <img src="/photos/DSC00485.webp" alt="" class="w-[50vw] h-[50vh] object-cover flex-shrink-0" loading="lazy" />
+      <img src="/photos/DSC00541-2.webp" alt="" class="w-[50vw] h-[50vh] object-cover flex-shrink-0" loading="lazy" />
+      <img src="/photos/DSC01256.webp" alt="" class="w-[50vw] h-[50vh] object-cover flex-shrink-0" loading="lazy" />
+      <img src="/photos/DSC03854.webp" alt="" class="w-[50vw] h-[50vh] object-cover flex-shrink-0" loading="lazy" />
+    </a>
+  </section>
+
   {projects.map((project, i) => {
     const firstMedia = project.media?.[0];
     const thumbnail = getThumbnailUrl(project);
@@ -203,24 +214,6 @@ if (hasSanityConfig) {
       />
     );
   })}
-
-  <section class="w-full py-16 md:py-20 px-6 md:px-[120px] border-b border-border-warm">
-    <h2 class="font-display text-[28px] md:text-[36px] text-text-primary mb-8" data-es>Fotografía</h2>
-    <h2 class="font-display text-[28px] md:text-[36px] text-text-primary mb-8 hidden" data-en>Photography</h2>
-    
-    <a href="/fotografia" class="flex gap-4 overflow-x-auto pb-4">
-      <img src="/photos/DSC00329.webp" alt="" class="w-[280px] h-[180px] object-cover flex-shrink-0" loading="lazy" />
-      <img src="/photos/DSC00485.webp" alt="" class="w-[280px] h-[180px] object-cover flex-shrink-0" loading="lazy" />
-      <img src="/photos/DSC00541-2.webp" alt="" class="w-[280px] h-[180px] object-cover flex-shrink-0" loading="lazy" />
-      <img src="/photos/DSC01256.webp" alt="" class="w-[280px] h-[180px] object-cover flex-shrink-0" loading="lazy" />
-      <img src="/photos/DSC03854.webp" alt="" class="w-[280px] h-[180px] object-cover flex-shrink-0" loading="lazy" />
-    </a>
-    
-    <a href="/fotografia" class="inline-block mt-6 font-mono text-[13px] tracking-[1.5px] text-accent-sienna hover:text-accent-ochre transition-colors">
-      <span data-es>VER TODOS</span>
-      <span data-en class="hidden">VIEW ALL</span>
-    </a>
-  </section>
 
   <Footer
     footerQuoteTitleEs={settings.footerQuoteTitleEs}
