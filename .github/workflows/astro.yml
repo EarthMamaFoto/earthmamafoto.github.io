@@ -27,6 +27,7 @@ concurrency:
 env:
   BUILD_PATH: "." # default value when not using subfolders
   # BUILD_PATH: subfolder
+  SANITY_PROJECT_ID: ${{ secrets.SANITY_PROJECT_ID }}
 
 jobs:
   build:
@@ -57,7 +58,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
           cache-dependency-path: ${{ env.BUILD_PATH }}/${{ steps.detect-package-manager.outputs.lockfile }}
       - name: Setup Pages
