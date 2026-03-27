@@ -21,13 +21,13 @@
 	--font-body: "Geist", ui-sans-serif, system-ui, sans-serif;
 
 	/* Font sizes */
-	--font-size-hero: 72px;
-	--font-size-project-title: 36px;
-	--font-size-body: 15px;
-	--font-size-label: 13px;
-	--font-size-label-sm: 11px;
-	--font-size-tagline: 12px;
-	--font-size-subtitle: 13px;
+	--text-hero: 72px;
+	--text-project-title: 36px;
+	--text-body: 15px;
+	--text-label: 13px;
+	--text-label-sm: 11px;
+	--text-tagline: 12px;
+	--text-subtitle: 13px;
 
 	/* Line heights */
 	--leading-body: 1.6;
@@ -44,7 +44,7 @@ body {
 	background-color: var(--color-page);
 	color: var(--color-text-primary);
 	font-family: var(--font-body);
-	font-size: var(--font-size-body);
+	font-size: var(--text-body);
 	line-height: var(--leading-body);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -53,6 +53,38 @@ body {
 /* ── Utility: ruled line ── */
 .ruled-line {
 	border-bottom: 1px solid var(--color-border-warm);
+}
+
+/* ── Hero video background ── */
+.video-bg {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+}
+
+.video-bg iframe {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100vw;
+	height: 56.25vw; /* 16:9 */
+	min-height: 100vh;
+	min-width: 177.78vh; /* 16:9 inverse */
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	border: 0;
+}
+
+.video-bg__poster {
+	position: absolute;
+	inset: 0;
+	background-size: cover;
+	background-position: center;
+	transition: opacity 0.8s ease;
+}
+
+.video-bg__poster.loaded {
+	opacity: 0;
 }
 
 /* ── Scrollbar (warm tones) ── */

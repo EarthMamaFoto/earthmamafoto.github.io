@@ -10,7 +10,7 @@ export function getLocale(): Locale {
 export function setLocale(locale: Locale): void {
   localStorage.setItem(STORAGE_KEY, locale);
   document.documentElement.setAttribute('lang', locale);
-  // Dispatch custom event for Astro islands to react
+  document.body.setAttribute('data-lang', locale);
   document.dispatchEvent(new CustomEvent('locale-change', { detail: { locale } }));
 }
 
@@ -24,7 +24,5 @@ export function toggleLocale(): Locale {
 export function initLocale(): void {
   const locale = getLocale();
   document.documentElement.setAttribute('lang', locale);
-
-  // Add data attributes to body for CSS visibility toggling
   document.body.setAttribute('data-lang', locale);
 }

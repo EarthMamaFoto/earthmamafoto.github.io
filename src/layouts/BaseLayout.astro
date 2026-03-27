@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 interface Props {
   title: string;
   description?: string;
@@ -13,13 +15,18 @@ const { title, description = '' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
     <title>{title}</title>
   </head>
   <body class="bg-page text-text-primary font-body antialiased">
     <slot />
     <script>
       import { initLocale } from '../scripts/language';
+      import { initVideoModal } from '../scripts/video-modal';
+      import { initHeroVideo } from '../scripts/hero-video';
       initLocale();
+      initVideoModal();
+      initHeroVideo();
     </script>
   </body>
 </html>

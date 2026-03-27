@@ -1,8 +1,217 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import ProjectSection from '../components/ProjectSection.astro';
+import VideoModal from '../components/VideoModal.astro';
+import Footer from '../components/Footer.astro';
+import { client } from '../../sanity/lib/client';
+import { allProjectsQuery, siteSettingsQuery, getThumbnailUrl } from '../lib/queries';
+
+interface Project {
+  title: string;
+  slug: string;
+  titleEn: string;
+  description: string;
+  descriptionEn: string;
+  order: number;
+  thumbnailUrl: string;
+  media: Array<{ title: string; url: string; type: string }>;
+}
+
+interface SiteSettings {
+  heroName: string;
+  heroRoleEs: string;
+  heroRoleEn: string;
+  heroTaglineEs: string;
+  heroTaglineEn: string;
+  footerQuoteTitleEs: string;
+  footerQuoteTitleEn: string;
+  footerQuoteEs: string;
+  footerQuoteEn: string;
+  colaboremosEmail: string;
+  socialLinks: Array<{ platform: string; url: string }>;
+}
+
+const fallbackProjects: Project[] = [
+  {
+    title: 'Mujeres Fuertes',
+    slug: 'mujeres-fuertes',
+    titleEn: 'Strong Women',
+    description: 'Serie documental que retrata la fuerza y resiliencia de mujeres centroamericanas.',
+    descriptionEn: 'Documentary series portraying the strength and resilience of Central American women.',
+    order: 1,
+    thumbnailUrl: '',
+    media: [
+      { title: 'Teaser', url: 'https://www.youtube.com/watch?v=S7LNQHob1AY', type: 'youtube' },
+      { title: 'Documental', url: 'https://www.youtube.com/watch?v=S7LNQHob1AY', type: 'youtube' },
+    ],
+  },
+  {
+    title: 'Recuperación Histórica CCT',
+    slug: 'recuperacion-historica-cct',
+    titleEn: 'Historical Recovery CCT',
+    description: 'Recuperación histórica del Centro de Capacitación para Trabajadoras.',
+    descriptionEn: 'Historical recovery of the Worker Women\'s Training Center.',
+    order: 2,
+    thumbnailUrl: '',
+    media: [
+      { title: 'Ana Báez', url: 'https://www.youtube.com/watch?v=6FjA_as6UXU', type: 'youtube' },
+      { title: 'Vivienne Solís', url: 'https://www.youtube.com/watch?v=3797QaUp3vU', type: 'youtube' },
+      { title: 'Katiana', url: 'https://www.youtube.com/watch?v=HyN3LsIS4Tk', type: 'youtube' },
+      { title: 'Katiana Reel', url: 'https://www.instagram.com/reel/DHBo510vS8y/', type: 'instagram' },
+    ],
+  },
+  {
+    title: 'Mujer Salvaje',
+    slug: 'mujer-salvaje',
+    titleEn: 'Wild Woman',
+    description: 'Exploración visual de la mujer y su conexión con la naturaleza salvaje.',
+    descriptionEn: 'Visual exploration of woman and her connection to wild nature.',
+    order: 3,
+    thumbnailUrl: '',
+    media: [
+      { title: 'Tráiler', url: 'https://drive.google.com/file/d/1ZfDQrP0cDI3bJjveYfg6Val3QhMfJbE4/preview', type: 'drive' },
+      { title: 'Reel', url: 'https://www.instagram.com/reel/DF0aNbLReEi/', type: 'instagram' },
+    ],
+  },
+  {
+    title: 'Producers Trust',
+    slug: 'producers-trust',
+    titleEn: 'Producers Trust',
+    description: 'Producción audiovisual para Producers Trust y sus marcas asociadas.',
+    descriptionEn: 'Audiovisual production for Producers Trust and associated brands.',
+    order: 4,
+    thumbnailUrl: '',
+    media: [
+      { title: 'Quinoa', url: 'https://www.youtube.com/watch?v=uaI_5sYb754', type: 'youtube' },
+      { title: 'StoryBird', url: 'https://www.youtube.com/watch?v=pXpoXD8k1F0', type: 'youtube' },
+      { title: 'Alaffia', url: 'https://www.youtube.com/watch?v=03jLgAV0FlI', type: 'youtube' },
+      { title: 'Instagram', url: 'https://www.instagram.com/producersmarket/', type: 'instagram' },
+    ],
+  },
+  {
+    title: 'Regenerative Homestead',
+    slug: 'regenerative-homestead',
+    titleEn: 'Regenerative Homestead',
+    description: 'Documental sobre prácticas regenerativas y vida sostenible.',
+    descriptionEn: 'Documentary about regenerative practices and sustainable living.',
+    order: 5,
+    thumbnailUrl: '',
+    media: [
+      { title: 'Documental', url: 'https://www.youtube.com/watch?v=OwBdLVUE9Jw', type: 'youtube' },
+    ],
+  },
+  {
+    title: 'ESD Professionals',
+    slug: 'esd-professionals',
+    titleEn: 'ESD Professionals',
+    description: 'Contenido audiovisual profesional para ESD.',
+    descriptionEn: 'Professional audiovisual content for ESD.',
+    order: 6,
+    thumbnailUrl: '',
+    media: [
+      { title: 'Video', url: 'https://drive.google.com/file/d/1c7O1Vxg8Cjc7NoKbyznwow-vk8fjfI4G/preview', type: 'drive' },
+    ],
+  },
+  {
+    title: 'Curso Mujeres Fuertes',
+    slug: 'curso-mujeres-fuertes',
+    titleEn: 'Strong Women Course',
+    description: 'Curso online de empoderamiento para mujeres.',
+    descriptionEn: 'Online empowerment course for women.',
+    order: 7,
+    thumbnailUrl: '',
+    media: [
+      { title: 'Curso Online', url: 'https://hotmart.com/es/marketplace/productos/mujeresfuertes/M53477666S', type: 'external' },
+    ],
+  },
+  {
+    title: 'Freelance Reels',
+    slug: 'freelance-reels',
+    titleEn: 'Freelance Reels',
+    description: 'Reels y contenido corto para diversos clientes.',
+    descriptionEn: 'Reels and short-form content for various clients.',
+    order: 8,
+    thumbnailUrl: '',
+    media: [
+      { title: 'Janzu', url: 'https://www.instagram.com/reel/C6M3CqXxSET/', type: 'instagram' },
+      { title: 'Hilando Fino', url: 'https://www.instagram.com/reel/CtH17SPLkLO/', type: 'instagram' },
+      { title: 'Coral Sintético', url: 'https://www.instagram.com/reel/CNQPb8CBBjQ/', type: 'instagram' },
+    ],
+  },
+];
+
+const fallbackSettings: SiteSettings = {
+  heroName: 'Karina Elizondo',
+  heroRoleEs: 'PRODUCTORA AUDIOVISUAL',
+  heroRoleEn: 'AUDIOVISUAL PRODUCER',
+  heroTaglineEs: 'Dirección · Producción · Edición · Postproducción',
+  heroTaglineEn: 'Direction · Production · Editing · Post-production',
+  footerQuoteTitleEs: '« Gratitud al reconocimiento »',
+  footerQuoteTitleEn: '« Gratitude for the recognition »',
+  footerQuoteEs: 'Mi intención es mostrar una pincelada de proyectos en los que he dirigido, colaborado o participado con mucho amor y dedicación.',
+  footerQuoteEn: 'My intention is to show a glimpse of projects I have directed, collaborated on, or participated in with much love and dedication.',
+  colaboremosEmail: '',
+  socialLinks: [],
+};
+
+const hasSanityConfig = Boolean(import.meta.env.SANITY_PROJECT_ID);
+
+let projects: Project[] = fallbackProjects;
+let settings: SiteSettings = fallbackSettings;
+
+if (hasSanityConfig) {
+  try {
+    const [fetchedProjects, fetchedSettings] = await Promise.all([
+      client.fetch(allProjectsQuery),
+      client.fetch(siteSettingsQuery),
+    ]);
+    if (fetchedProjects?.length) projects = fetchedProjects;
+    if (fetchedSettings) settings = fetchedSettings;
+  } catch {
+  }
+}
 ---
 
-<BaseLayout title="Karina Disondo — Productora Audiovisual">
-  <Hero />
+<BaseLayout title="Karina Elizondo — Productora Audiovisual">
+  <Hero
+    heroName={settings.heroName}
+    heroRoleEs={settings.heroRoleEs}
+    heroRoleEn={settings.heroRoleEn}
+    heroTaglineEs={settings.heroTaglineEs}
+    heroTaglineEn={settings.heroTaglineEn}
+  />
+
+  {projects.map((project, i) => {
+    const firstMedia = project.media?.[0];
+    const thumbnail = getThumbnailUrl(project);
+    return (
+      <ProjectSection
+        index={i}
+        title={project.title}
+        titleEn={project.titleEn}
+        description={project.description}
+        descriptionEn={project.descriptionEn}
+        order={project.order}
+        videoUrl={firstMedia?.url}
+        thumbnail={thumbnail}
+        links={project.media?.map((m) => ({
+          title: m.title,
+          url: m.url,
+          type: m.type,
+        })) ?? []}
+      />
+    );
+  })}
+
+  <Footer
+    footerQuoteTitleEs={settings.footerQuoteTitleEs}
+    footerQuoteTitleEn={settings.footerQuoteTitleEn}
+    footerQuoteEs={settings.footerQuoteEs}
+    footerQuoteEn={settings.footerQuoteEn}
+    colaboremosEmail={settings.colaboremosEmail}
+    socialLinks={settings.socialLinks}
+  />
+
+  <VideoModal />
 </BaseLayout>

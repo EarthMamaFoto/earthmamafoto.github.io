@@ -3,14 +3,24 @@ interface Props {
   videoUrl?: string;
   thumbnail?: string;
 }
-const { videoUrl = '' } = Astro.props;
+const { videoUrl = '', thumbnail = '' } = Astro.props;
 ---
 
 <div
-  class="w-full aspect-video bg-video-placeholder flex items-center justify-center cursor-pointer hover:scale-[1.02] transition-transform duration-300 group"
+  class:list={[
+    'w-full aspect-video bg-video-placeholder flex items-center justify-center cursor-pointer hover:scale-[1.02] transition-transform duration-300 group relative',
+  ]}
   data-video-url={videoUrl}
   data-video-trigger
 >
+  {thumbnail && (
+    <img
+      src={thumbnail}
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover"
+      loading="lazy"
+    />
+  )}
   <svg
     width="48"
     height="48"
@@ -20,7 +30,7 @@ const { videoUrl = '' } = Astro.props;
     stroke-width="1.5"
     stroke-linecap="round"
     stroke-linejoin="round"
-    class="text-text-muted/50 group-hover:text-text-muted transition-colors duration-200"
+    class="text-text-muted/50 group-hover:text-text-muted transition-colors duration-200 relative z-10"
   >
     <polygon points="5 3 19 12 5 21 5 3 19 12" />
   </svg>

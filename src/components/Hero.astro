@@ -19,22 +19,29 @@ const {
 ---
 
 <section class="relative w-full h-screen bg-dark overflow-hidden" id="hero">
-  <!-- Video placeholder area -->
-  <div class="absolute inset-0 flex items-center justify-center">
-    <div class="w-full h-full bg-[#382F28]"></div>
+  <div class="video-bg">
+    <div
+      class="video-bg__poster bg-[#382F28]"
+      id="hero-poster"
+      style="background-image: url('https://img.youtube.com/vi/WhVFpTtQcjE/maxresdefault.jpg')"
+    ></div>
+    <iframe
+      id="hero-video"
+      src="https://www.youtube.com/embed/WhVFpTtQcjE?autoplay=1&mute=1&loop=1&playlist=WhVFpTtQcjE&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1&iv_load_policy=3"
+      allow="autoplay; encrypted-media"
+      loading="eager"
+    ></iframe>
   </div>
 
-  <!-- Gradient overlay -->
-  <div class="absolute inset-0 bg-gradient-to-t from-transparent via-dark/80 to-dark/20"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-dark/20 via-dark/80 to-dark"></div>
 
   <!-- Language toggle — top right -->
-  <div class="absolute top-10 right-[120px]">
+  <div class="absolute top-6 right-6 md:top-10 md:right-[120px]">
     <LanguageToggle />
   </div>
 
-  <!-- Hero content — bottom left -->
-  <div class="absolute bottom-[120px] left-[120px] flex flex-col gap-4">
-    <h1 class="font-display text-hero leading-[1.05] tracking-hero text-white">
+  <div class="absolute bottom-10 left-6 md:bottom-[120px] md:left-[120px] flex flex-col gap-3 md:gap-4">
+    <h1 class="font-display text-[40px] md:text-hero leading-[1.05] tracking-hero text-white">
       {heroName}
     </h1>
     <p

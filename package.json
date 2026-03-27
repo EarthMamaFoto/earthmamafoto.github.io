@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "seed": "npx tsx scripts/seed.ts"
   },
   "dependencies": {
     "@sanity/client": "^7.20.0",
@@ -23,6 +24,7 @@
     "@types/node": "^25.5.0",
     "@types/video.js": "^7.3.58",
     "sanity": "^3.57.0",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
 }

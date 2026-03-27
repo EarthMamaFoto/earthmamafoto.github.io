@@ -20,6 +20,7 @@ const {
   titleEn = '',
   description = '',
   descriptionEn = '',
+  order,
   videoUrl = '',
   thumbnail = '',
   links = [],
@@ -29,34 +30,34 @@ const isEven = index % 2 === 1;
 const displayNumber = String(order || index + 1).padStart(2, '0');
 ---
 
-<section class="w-full py-[60px] px-[120px] border-b border-border-warm flex items-center gap-[60px]" data-es>
+<section class="w-full py-10 md:py-[60px] px-6 md:px-[120px] border-b border-border-warm flex flex-col md:flex-row items-center gap-6 md:gap-[60px]">
   {isEven ? (
     <>
-      <!-- Text left -->
-      <div class="flex-1 flex flex-col gap-5 justify-center max-w-[500px]">
+      <div class="flex-1 flex flex-col gap-4 md:gap-5 justify-center max-w-[500px] order-2 md:order-1">
         <span class="font-mono text-[13px] font-medium tracking-[2px] text-accent-ochre">
           {displayNumber}
         </span>
-        <h2 class="font-display text-[36px] leading-tight text-text-primary" data-es>{title}</h2>
-        {titleEn && <h2 class="font-display text-[36px] leading-tight text-text-primary hidden" data-en>{titleEn}</h2>}
+        <h2 class="font-display text-[28px] md:text-[36px] leading-tight text-text-primary" data-es>{title}</h2>
+        {titleEn && <h2 class="font-display text-[28px] md:text-[36px] leading-tight text-text-primary hidden" data-en>{titleEn}</h2>}
         <p class="text-[15px] leading-[1.6] text-text-secondary" data-es>{description}</p>
         {descriptionEn && <p class="text-[15px] leading-[1.6] text-text-secondary hidden" data-en>{descriptionEn}</p>}
         <ProjectLinks links={links} />
       </div>
-      <!-- Video right -->
-      <VideoPlaceholder videoUrl={videoUrl} thumbnail={thumbnail} />
+      <div class="w-full order-1 md:order-2">
+        <VideoPlaceholder videoUrl={videoUrl} thumbnail={thumbnail} />
+      </div>
     </>
   ) : (
     <>
-      <!-- Video left -->
-      <VideoPlaceholder videoUrl={videoUrl} thumbnail={thumbnail} />
-      <!-- Text right -->
-      <div class="flex-1 flex flex-col gap-5 justify-center max-w-[500px]">
+      <div class="w-full order-1">
+        <VideoPlaceholder videoUrl={videoUrl} thumbnail={thumbnail} />
+      </div>
+      <div class="flex-1 flex flex-col gap-4 md:gap-5 justify-center max-w-[500px] order-2">
         <span class="font-mono text-[13px] font-medium tracking-[2px] text-accent-ochre">
           {displayNumber}
         </span>
-        <h2 class="font-display text-[36px] leading-tight text-text-primary" data-es>{title}</h2>
-        {titleEn && <h2 class="font-display text-[36px] leading-tight text-text-primary hidden" data-en>{titleEn}</h2>}
+        <h2 class="font-display text-[28px] md:text-[36px] leading-tight text-text-primary" data-es>{title}</h2>
+        {titleEn && <h2 class="font-display text-[28px] md:text-[36px] leading-tight text-text-primary hidden" data-en>{titleEn}</h2>}
         <p class="text-[15px] leading-[1.6] text-text-secondary" data-es>{description}</p>
         {descriptionEn && <p class="text-[15px] leading-[1.6] text-text-secondary hidden" data-en>{descriptionEn}</p>}
         <ProjectLinks links={links} />
