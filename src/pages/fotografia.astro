@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const photoList = [
+  'danifya.webp', 'DSC00329.webp', 'DSC00402-Enhanced-NR.webp', 'DSC00485.webp',
+  'DSC00541-2.webp', 'DSC00588.webp', 'DSC01256.webp', 'DSC02155-2.webp',
+  'DSC03384.webp', 'DSC03826.webp', 'DSC03830.webp', 'DSC03854.webp',
+  'DSC03959.webp', 'DSC04052.webp', 'DSC04107.webp', 'DSC04459.webp',
+  'DSC04594.webp', 'DSC04622.webp', 'DSC04946.webp', 'DSC04956.webp',
+  'DSC06970.webp', 'DSC07318.webp', 'DSC07702.webp', 'DSC08347.webp',
+  'DSC08360.webp', 'DSC09374.webp', 'DSC09401.webp', 'DSC09589.webp',
+  'DSC09619.webp', 'DSC09760.webp', 'DSC09954-2.webp', 'Espejo de Agua.webp',
+  'Gestacion DSC00297.webp', 'Gestacion DSC01418-Enhanced-NR.webp', 'Gestacion DSC08346.webp', 'Gestacion DSC08627.webp',
+  'IMG_3562.webp', 'Maternidades DSC00242.webp', 'Maternidades DSC01183.webp', 'Maternidades DSC07853__DSC07853.webp',
+  'Maternidades DSC09738.webp', 'Maternidades DSC09921.webp', 'Medicina DSC06432.webp', 'Medicina DSC06617.webp',
+  'Medicina DSC06639.webp', 'Medicina DSC06673.webp', 'Medicina DSC06870.webp', 'Renacer DSC01056.webp',
+  'Renacer DSC01065.webp', 'Renacer DSC04560.webp', 'Resonare-03.webp', 'Resonare-06.webp',
+  'Resonare-08.webp', 'Resonare-17.webp', 'gotita.webp', 'pezonlove.JPG.webp', 'quque.webp'
+].sort();
+---
+
+<BaseLayout title="Fotografía — Karina Elizondo">
+  <section class="w-full py-16 md:py-20 px-6 md:px-[120px] border-b border-border-warm">
+    <h1 class="font-display text-[28px] md:text-[40px] text-text-primary mb-10" data-es>Fotografía</h1>
+    <h1 class="font-display text-[28px] md:text-[40px] text-text-primary mb-10 hidden" data-en>Photography</h1>
+    
+    <div class="masonry">
+      {photoList.map((photo) => (
+        <img 
+          src={`/photos/${photo}`} 
+          alt="" 
+          loading="lazy"
+          class="w-full mb-4 block"
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style is:global>
+.masonry {
+  column-count: 1;
+  column-gap: 1rem;
+}
+.masonry img {
+  break-inside: avoid;
+}
+@media (min-width: 640px) {
+  .masonry { column-count: 2; }
+}
+@media (min-width: 1024px) {
+  .masonry { column-count: 3; }
+}
+@media (min-width: 1280px) {
+  .masonry { column-count: 4; }
+}
+</style>
