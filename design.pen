@@ -1,0 +1,1272 @@
+{
+  "version": "2.9",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Frame",
+      "clip": true,
+      "width": 800,
+      "height": 600,
+      "fill": "#FFFFFF",
+      "layout": "none"
+    },
+    {
+      "type": "frame",
+      "id": "g0zVS",
+      "x": 0,
+      "y": 0,
+      "name": "Karina Portfolio",
+      "width": 1440,
+      "fill": "$--bg-parchment",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "mkv8x",
+          "name": "Hero",
+          "clip": true,
+          "width": "fill_container",
+          "height": 900,
+          "fill": "$--bg-dark",
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "lRuPJ",
+              "x": 0,
+              "y": 0,
+              "name": "Hero Video Placeholder",
+              "width": 1440,
+              "height": 900,
+              "fill": "#2A2A2A",
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "BRNd7",
+                  "name": "playIcon",
+                  "width": 64,
+                  "height": 64,
+                  "iconFontName": "play",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF33"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "swaG8",
+              "x": 0,
+              "y": 0,
+              "name": "Hero Overlay",
+              "width": 1440,
+              "height": 900,
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 0,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#1E1E1E00",
+                    "position": 0
+                  },
+                  {
+                    "color": "#1E1E1EDD",
+                    "position": 0.55
+                  },
+                  {
+                    "color": "#1E1E1E",
+                    "position": 1
+                  }
+                ]
+              },
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "DMvBP",
+                  "x": 120,
+                  "y": 580,
+                  "name": "Hero Content",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "3ZvE2",
+                      "name": "heroName",
+                      "fill": "$--text-white",
+                      "content": "Karina Elizondo",
+                      "fontFamily": "Playfair Display",
+                      "fontSize": 72,
+                      "fontWeight": "normal",
+                      "letterSpacing": 0.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "yDKQo",
+                      "name": "heroRole",
+                      "fill": "#FFFFFFAA",
+                      "content": "PRODUCTORA AUDIOVISUAL",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 13,
+                      "fontWeight": "500",
+                      "letterSpacing": 3
+                    },
+                    {
+                      "type": "text",
+                      "id": "QX9b2",
+                      "name": "heroTagline",
+                      "fill": "#FFFFFF88",
+                      "content": "Dirección · Producción · Edición · Postproducción",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 12,
+                      "fontWeight": "normal",
+                      "letterSpacing": 1.5
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "apuPK",
+                  "x": 1200,
+                  "y": 40,
+                  "name": "Language Toggle",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "2SqR1",
+                      "name": "langES",
+                      "fill": "$--text-white",
+                      "content": "ES",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 13,
+                      "fontWeight": "500",
+                      "letterSpacing": 1
+                    },
+                    {
+                      "type": "text",
+                      "id": "Kb3DU",
+                      "name": "langSep",
+                      "fill": "#FFFFFF66",
+                      "content": "|",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 13,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "WkDGd",
+                      "name": "langEN",
+                      "fill": "#FFFFFF66",
+                      "content": "EN",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 13,
+                      "fontWeight": "500",
+                      "letterSpacing": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "icon_font",
+                  "id": "vUFIq",
+                  "x": 710,
+                  "y": 850,
+                  "name": "scrollHint",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "chevron-down",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF44"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "qMRIv",
+          "name": "Project 1 - Mujeres Fuertes",
+          "width": "fill_container",
+          "height": 560,
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--border-warm"
+          },
+          "gap": 60,
+          "padding": [
+            60,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "dWAJG",
+              "name": "Video Placeholder",
+              "width": 620,
+              "height": "fill_container",
+              "fill": "#E8E5DF",
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "VQ0aU",
+                  "name": "p1play",
+                  "width": 48,
+                  "height": 48,
+                  "iconFontName": "play",
+                  "iconFontFamily": "lucide",
+                  "fill": "#99999988"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "8qo8T",
+              "name": "Text Content",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "cUCRD",
+                  "name": "p1num",
+                  "fill": "$--accent-gold",
+                  "content": "01",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "Qtp7G",
+                  "name": "p1title",
+                  "fill": "$--text-primary",
+                  "content": "Mujeres Fuertes",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 36,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "bvjmp",
+                  "name": "p1desc",
+                  "fill": "$--text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Dirección y Co-producción del documental. Material educativo sobre la prevención de violencia para inspirar a vivir en libertad.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Geist",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "QvRNp",
+                  "name": "Links",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "mOp3b",
+                      "name": "p1link1",
+                      "fill": "$--accent-navy",
+                      "content": "DOCUMENTAL COMPLETO",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 1.5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "1wVU2",
+          "name": "Project 2 - Recuperación Histórica",
+          "width": "fill_container",
+          "height": 560,
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--border-warm"
+          },
+          "gap": 60,
+          "padding": [
+            60,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "qsWZd",
+              "name": "Text Content",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "9Bmj2",
+                  "name": "p2num",
+                  "fill": "$--accent-gold",
+                  "content": "02",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "JDnBV",
+                  "name": "p2title",
+                  "fill": "$--text-primary",
+                  "content": "Recuperación Histórica\nCentro Científico Tropical",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 36,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "1cz85",
+                  "name": "p2desc",
+                  "fill": "$--text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Edición y musicalización para una serie de videos en homenaje a personas clave dentro del CCT.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Geist",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "rGCTK",
+                  "name": "Links",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "DM1Lr",
+                      "name": "p2link1",
+                      "fill": "$--accent-navy",
+                      "content": "ANA BAEZ",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "Ml18g",
+                      "name": "p2link2",
+                      "fill": "$--accent-navy",
+                      "content": "VIVIENNE SOLÍS",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "VPDNA",
+                      "name": "p2link3",
+                      "fill": "$--accent-navy",
+                      "content": "TEASER KATIANA IG",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 1.5
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hXeWy",
+              "name": "Video Placeholder",
+              "width": 620,
+              "height": "fill_container",
+              "fill": "#E8E5DF",
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "n3yFi",
+                  "name": "p2play",
+                  "width": 48,
+                  "height": 48,
+                  "iconFontName": "play",
+                  "iconFontFamily": "lucide",
+                  "fill": "#99999988"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ypbbH",
+          "name": "Project 3 - Mujer Salvaje",
+          "width": "fill_container",
+          "height": 560,
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--border-warm"
+          },
+          "gap": 60,
+          "padding": [
+            60,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "2sAKW",
+              "name": "Video Placeholder",
+              "width": 620,
+              "height": "fill_container",
+              "fill": "#E8E5DF",
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "UrcLs",
+                  "name": "p3play",
+                  "width": 48,
+                  "height": 48,
+                  "iconFontName": "play",
+                  "iconFontFamily": "lucide",
+                  "fill": "#99999988"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "plBFO",
+              "name": "Text Content",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "HjgQo",
+                  "name": "p3num",
+                  "fill": "$--accent-gold",
+                  "content": "03",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "g0GIj",
+                  "name": "p3title",
+                  "fill": "$--text-primary",
+                  "content": "Mujer Salvaje",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 36,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Wp5cM",
+                  "name": "p3desc",
+                  "fill": "$--text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Grabación y Edición para el aftermovie del encuentro de highline femenino en las montañas del Valle Diamante, CR.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Geist",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "ZZRgT",
+                  "name": "Links",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "UiVRN",
+                      "name": "p3link1",
+                      "fill": "$--accent-navy",
+                      "content": "VERSIÓN REEL IG",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 1.5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "lqb33",
+          "name": "Project 4 - Producers Trust",
+          "width": "fill_container",
+          "height": 560,
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--border-warm"
+          },
+          "gap": 60,
+          "padding": [
+            60,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "OJcyT",
+              "name": "Text Content",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "4RcNt",
+                  "name": "p4num",
+                  "fill": "$--accent-gold",
+                  "content": "04",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "PHS9X",
+                  "name": "p4title",
+                  "fill": "$--text-primary",
+                  "content": "Producers Trust",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 36,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "F1rsE",
+                  "name": "p4desc",
+                  "fill": "$--text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Coordinación del equipo digital y creación de contenido en formato horizontal y vertical.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Geist",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "47H1A",
+                  "name": "Links",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "dZBON",
+                      "name": "p4link1",
+                      "fill": "$--accent-navy",
+                      "content": "WHAT IS STORYBIRD?",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "MoRnQ",
+                      "name": "p4link2",
+                      "fill": "$--accent-navy",
+                      "content": "ALAFFIA",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 1.5
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qhi2T",
+              "name": "Video Placeholder",
+              "width": 620,
+              "height": "fill_container",
+              "fill": "#E8E5DF",
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "HJLws",
+                  "name": "p4play",
+                  "width": 48,
+                  "height": 48,
+                  "iconFontName": "play",
+                  "iconFontFamily": "lucide",
+                  "fill": "#99999988"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "RoHTu",
+          "name": "Project 5 - Regenerative Homestead",
+          "width": "fill_container",
+          "height": 560,
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--border-warm"
+          },
+          "gap": 60,
+          "padding": [
+            60,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "woyK6",
+              "name": "Video Placeholder",
+              "width": 620,
+              "height": "fill_container",
+              "fill": "#E8E5DF",
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "WIZ0s",
+                  "name": "p5play",
+                  "width": 48,
+                  "height": 48,
+                  "iconFontName": "play",
+                  "iconFontFamily": "lucide",
+                  "fill": "#99999988"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "y7Sur",
+              "name": "Text Content",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "QHXHF",
+                  "name": "p5num",
+                  "fill": "$--accent-gold",
+                  "content": "05",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "fbIlX",
+                  "name": "p5title",
+                  "fill": "$--text-primary",
+                  "content": "Regenerative Homestead Blue Print",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 36,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "YxMGh",
+                  "name": "p5desc",
+                  "fill": "$--text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Grabación y montaje para el video promocional de una propiedad en venta en La Alfombra, Pérez Zeledón, CR.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Geist",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "Riw1u",
+          "name": "Project 6 - ESD Professionals",
+          "width": "fill_container",
+          "height": 560,
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--border-warm"
+          },
+          "gap": 60,
+          "padding": [
+            60,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "6Dxet",
+              "name": "Text Content",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "SCvnn",
+                  "name": "p6num",
+                  "fill": "$--accent-gold",
+                  "content": "06",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "vUcQ5",
+                  "name": "p6title",
+                  "fill": "$--text-primary",
+                  "content": "ESD Professionals",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 36,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "t0Uco",
+                  "name": "p6desc",
+                  "fill": "$--text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Montaje de campaña para visibilizar la diversidad de personas instructoras de autodefensa bajo el método de la organización ESD.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Geist",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "tVFy9",
+              "name": "Video Placeholder",
+              "width": 620,
+              "height": "fill_container",
+              "fill": "#E8E5DF",
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "lJo5t",
+                  "name": "p6play",
+                  "width": 48,
+                  "height": 48,
+                  "iconFontName": "play",
+                  "iconFontFamily": "lucide",
+                  "fill": "#99999988"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "q85u4",
+          "name": "Project 7 - Curso Mujeres Fuertes",
+          "width": "fill_container",
+          "height": 560,
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--border-warm"
+          },
+          "gap": 60,
+          "padding": [
+            60,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "hUcDH",
+              "name": "Video Placeholder",
+              "width": 620,
+              "height": "fill_container",
+              "fill": "#E8E5DF",
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "XXd4d",
+                  "name": "p7play",
+                  "width": 48,
+                  "height": 48,
+                  "iconFontName": "play",
+                  "iconFontFamily": "lucide",
+                  "fill": "#99999988"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "30Eb8",
+              "name": "Text Content",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "TzByt",
+                  "name": "p7num",
+                  "fill": "$--accent-gold",
+                  "content": "07",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "xshQq",
+                  "name": "p7title",
+                  "fill": "$--text-primary",
+                  "content": "Curso en Línea Mujeres Fuertes",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 36,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "PucGE",
+                  "name": "p7desc",
+                  "fill": "$--text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Producción completa del curso virtual de Autodefensa y Empoderamiento de Mujeres Fuertes.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Geist",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "9Yd6Q",
+                  "name": "Links",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "onSae",
+                      "name": "p7link1",
+                      "fill": "$--accent-navy",
+                      "content": "COMPRAR CURSO",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 1.5
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "fTUhc",
+          "name": "Project 8 - Freelance en Reels",
+          "width": "fill_container",
+          "height": 560,
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "$--border-warm"
+          },
+          "gap": 60,
+          "padding": [
+            60,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "Q7GdC",
+              "name": "Text Content",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 20,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "4TA2c",
+                  "name": "p8num",
+                  "fill": "$--accent-gold",
+                  "content": "08",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "text",
+                  "id": "bgYdL",
+                  "name": "p8title",
+                  "fill": "$--text-primary",
+                  "content": "Freelance en Reels",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 36,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Uq5dT",
+                  "name": "p8desc",
+                  "fill": "$--text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Grabación y/o montaje de reels para diferentes artistas, emprendimientos y organizaciones.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Geist",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "poyDN",
+                  "name": "Links",
+                  "gap": 24,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "gOYs4",
+                      "name": "p8link1",
+                      "fill": "$--accent-navy",
+                      "content": "JANZU",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "TtSsO",
+                      "name": "p8link2",
+                      "fill": "$--accent-navy",
+                      "content": "HILANDO FINO",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 1.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "XEr0R",
+                      "name": "p8link3",
+                      "fill": "$--accent-navy",
+                      "content": "CORAL SINTÉTICO",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 11,
+                      "fontWeight": "500",
+                      "letterSpacing": 1.5
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "NFm7T",
+              "name": "Video Placeholder",
+              "width": 620,
+              "height": "fill_container",
+              "fill": "#E8E5DF",
+              "layout": "vertical",
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "SrBmu",
+                  "name": "p8play",
+                  "width": 48,
+                  "height": 48,
+                  "iconFontName": "play",
+                  "iconFontFamily": "lucide",
+                  "fill": "#99999988"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "6XhPv",
+          "name": "Footer",
+          "width": "fill_container",
+          "fill": "$--bg-parchment",
+          "stroke": {
+            "align": "inside",
+            "thickness": {
+              "top": 1
+            },
+            "fill": "$--border-warm"
+          },
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            80,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "IZAz5",
+              "name": "Footer Copy",
+              "width": 800,
+              "layout": "vertical",
+              "gap": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "6l1GY",
+                  "name": "footerLine1",
+                  "fill": "$--text-primary",
+                  "content": "« Gratitud al reconocimiento »",
+                  "textAlign": "center",
+                  "fontFamily": "Playfair Display",
+                  "fontSize": 22,
+                  "fontWeight": "normal",
+                  "fontStyle": "italic"
+                },
+                {
+                  "type": "text",
+                  "id": "aa1OL",
+                  "name": "footerLine2",
+                  "fill": "$--text-secondary",
+                  "textGrowth": "fixed-width",
+                  "width": 700,
+                  "content": "Mi intención es mostrar una pincelada de proyectos en los que he dirigido, colaborado o participado con mucho amor y dedicación.",
+                  "lineHeight": 1.6,
+                  "textAlign": "center",
+                  "fontFamily": "Geist",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "g2rQt",
+              "name": "Colaboremos Button",
+              "fill": "$--bg-dark",
+              "gap": 10,
+              "padding": [
+                18,
+                36
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "X7WTS",
+                  "name": "ctaIcon",
+                  "width": 18,
+                  "height": 18,
+                  "iconFontName": "mail",
+                  "iconFontFamily": "lucide",
+                  "fill": "$--text-white"
+                },
+                {
+                  "type": "text",
+                  "id": "v2mwr",
+                  "name": "ctaText",
+                  "fill": "$--text-white",
+                  "content": "COLABOREMOS",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 13,
+                  "fontWeight": "500",
+                  "letterSpacing": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "eOm3j",
+              "name": "Social Icons",
+              "gap": 32,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "owwNK",
+                  "name": "igIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "instagram",
+                  "iconFontFamily": "lucide",
+                  "fill": "$--text-tertiary"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "8B5c9",
+                  "name": "twIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "twitter",
+                  "iconFontFamily": "lucide",
+                  "fill": "$--text-tertiary"
+                },
+                {
+                  "type": "icon_font",
+                  "id": "SGjg1",
+                  "name": "liIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "linkedin",
+                  "iconFontFamily": "lucide",
+                  "fill": "$--text-tertiary"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "--accent-gold": {
+      "type": "color",
+      "value": "#C8B496"
+    },
+    "--accent-navy": {
+      "type": "color",
+      "value": "#384F84"
+    },
+    "--bg-dark": {
+      "type": "color",
+      "value": "#1E1E1E"
+    },
+    "--bg-navy": {
+      "type": "color",
+      "value": "#384F84"
+    },
+    "--bg-parchment": {
+      "type": "color",
+      "value": "#F4F2EF"
+    },
+    "--border-warm": {
+      "type": "color",
+      "value": "#E5E0D8"
+    },
+    "--font-body": {
+      "type": "string",
+      "value": "Geist"
+    },
+    "--font-display": {
+      "type": "string",
+      "value": "Playfair Display"
+    },
+    "--font-mono": {
+      "type": "string",
+      "value": "IBM Plex Mono"
+    },
+    "--text-muted": {
+      "type": "color",
+      "value": "#777777"
+    },
+    "--text-primary": {
+      "type": "color",
+      "value": "#1A1A1A"
+    },
+    "--text-secondary": {
+      "type": "color",
+      "value": "#4A4A4A"
+    },
+    "--text-tertiary": {
+      "type": "color",
+      "value": "#666666"
+    },
+    "--text-white": {
+      "type": "color",
+      "value": "#FFFFFF"
+    }
+  }
+}
