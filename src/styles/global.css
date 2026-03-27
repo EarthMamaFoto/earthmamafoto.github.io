@@ -1,1 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Playfair+Display:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
+
+/* ── Tailwind v4 Theme — Ochre & Clay ── */
+@theme {
+	/* Colors */
+	--color-page: #FAF3EB;
+	--color-dark: #2C2420;
+	--color-video-placeholder: #E6D9C8;
+	--color-text-primary: #3A2E24;
+	--color-text-secondary: #5B4D40;
+	--color-text-tertiary: #786A5C;
+	--color-text-muted: #8C7D6E;
+	--color-accent-ochre: #C4953A;
+	--color-accent-sienna: #9E5A3C;
+	--color-border-warm: #D4C4AB;
+
+	/* Font families */
+	--font-display: "Playfair Display", serif;
+	--font-mono: "IBM Plex Mono", ui-monospace, monospace;
+	--font-body: "Geist", ui-sans-serif, system-ui, sans-serif;
+
+	/* Font sizes */
+	--font-size-hero: 72px;
+	--font-size-project-title: 36px;
+	--font-size-body: 15px;
+	--font-size-label: 13px;
+	--font-size-label-sm: 11px;
+	--font-size-tagline: 12px;
+	--font-size-subtitle: 13px;
+
+	/* Line heights */
+	--leading-body: 1.6;
+
+	/* Letter spacing */
+	--tracking-label: 0.15em;
+	--tracking-tagline: 0.15em;
+	--tracking-subtitle: 0.3em;
+	--tracking-hero: 0.025em;
+}
+
+/* ── Base defaults ── */
+body {
+	background-color: var(--color-page);
+	color: var(--color-text-primary);
+	font-family: var(--font-body);
+	font-size: var(--font-size-body);
+	line-height: var(--leading-body);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Utility: ruled line ── */
+.ruled-line {
+	border-bottom: 1px solid var(--color-border-warm);
+}
+
+/* ── Scrollbar (warm tones) ── */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--color-page);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-border-warm);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--color-text-muted);
+}
