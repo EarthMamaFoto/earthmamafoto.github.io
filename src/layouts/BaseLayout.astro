@@ -1,0 +1,25 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = '' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-page text-text-primary font-body antialiased">
+    <slot />
+    <script>
+      import { initLocale } from '../scripts/language';
+      initLocale();
+    </script>
+  </body>
+</html>

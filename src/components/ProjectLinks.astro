@@ -1,0 +1,21 @@
+---
+interface Props {
+  links?: Array<{ title: string; url: string; type?: string }>;
+}
+const { links = [] } = Astro.props;
+---
+
+{links.length > 0 && (
+  <div class="flex flex-wrap gap-6 mt-2">
+    {links.map((link) => (
+      <a
+        href={link.url}
+        target={link.type === 'instagram' ? '_blank' : '_self'}
+        rel={link.type === 'instagram' ? 'noopener noreferrer' : ''}
+        class="font-mono text-[11px] font-medium tracking-[1.5px] text-accent-sienna hover:text-accent-ochre transition-colors duration-200"
+      >
+        {link.title.toUpperCase()}
+      </a>
+    ))}
+  </div>
+)}

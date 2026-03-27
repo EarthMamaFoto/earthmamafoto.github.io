@@ -1,0 +1,78 @@
+---
+import LanguageToggle from './LanguageToggle.astro';
+
+interface Props {
+  heroName?: string;
+  heroRoleEs?: string;
+  heroRoleEn?: string;
+  heroTaglineEs?: string;
+  heroTaglineEn?: string;
+}
+
+const {
+  heroName = 'Karina Disondo',
+  heroRoleEs = 'PRODUCTORA AUDIOVISUAL',
+  heroRoleEn = 'AUDIOVISUAL PRODUCER',
+  heroTaglineEs = 'Dirección · Producción · Edición · Postproducción',
+  heroTaglineEn = 'Direction · Production · Editing · Post-production',
+} = Astro.props;
+---
+
+<section class="relative w-full h-screen bg-dark overflow-hidden" id="hero">
+  <!-- Video placeholder area -->
+  <div class="absolute inset-0 flex items-center justify-center">
+    <div class="w-full h-full bg-[#382F28]"></div>
+  </div>
+
+  <!-- Gradient overlay -->
+  <div class="absolute inset-0 bg-gradient-to-t from-transparent via-dark/80 to-dark/20"></div>
+
+  <!-- Language toggle — top right -->
+  <div class="absolute top-10 right-[120px]">
+    <LanguageToggle />
+  </div>
+
+  <!-- Hero content — bottom left -->
+  <div class="absolute bottom-[120px] left-[120px] flex flex-col gap-4">
+    <h1 class="font-display text-hero leading-[1.05] tracking-hero text-white">
+      {heroName}
+    </h1>
+    <p
+      class="font-mono text-label font-medium tracking-subtitle text-white/70"
+      data-es
+    >
+      {heroRoleEs}
+    </p>
+    <p
+      class="font-mono text-label font-medium tracking-subtitle text-white/70 hidden"
+      data-en
+    >
+      {heroRoleEn}
+    </p>
+    <p class="font-mono text-tagline tracking-label text-white/50" data-es>
+      {heroTaglineEs}
+    </p>
+    <p
+      class="font-mono text-tagline tracking-label text-white/50 hidden"
+      data-en
+    >
+      {heroTaglineEn}
+    </p>
+  </div>
+
+  <!-- Scroll indicator — bottom center -->
+  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/25">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <polyline points="6 9 12 15 18 9" />
+    </svg>
+  </div>
+</section>

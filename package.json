@@ -20,7 +20,9 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.8",
+    "@types/node": "^25.5.0",
     "@types/video.js": "^7.3.58",
+    "sanity": "^3.57.0",
     "typescript": "^5.9.3"
   }
 }

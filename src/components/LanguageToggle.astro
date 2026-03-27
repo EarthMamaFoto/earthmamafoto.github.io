@@ -1,0 +1,52 @@
+---
+---
+<div class="inline-flex items-center gap-0 cursor-pointer select-none" id="lang-toggle">
+  <span class="lang-es font-mono text-[13px] font-medium tracking-[1px] text-white opacity-100 transition-opacity duration-200" data-lang="es">ES</span>
+  <span class="font-mono text-[13px] text-white opacity-40">|</span>
+  <span class="lang-en font-mono text-[13px] font-medium tracking-[1px] text-white opacity-40 transition-opacity duration-200" data-lang="en">EN</span>
+</div>
+
+<style>
+  #lang-toggle [data-lang].active {
+    opacity: 1 !important;
+  }
+  #lang-toggle [data-lang]:not(.active) {
+    opacity: 0.4 !important;
+  }
+</style>
+
+<script>
+  import { initLocale, toggleLocale } from '../scripts/language';
+
+  initLocale();
+
+  const toggle = document.getElementById('lang-toggle');
+  const esSpan = toggle?.querySelector('[data-lang="es"]');
+  const enSpan = toggle?.querySelector('[data-lang="en"]');
+
+  function updateUI(locale: string) {
+    esSpan?.classList.toggle('active', locale === 'es');
+    enSpan?.classList.toggle('active', locale === 'en');
+  }
+
+  // Set initial state
+  updateUI(localStorage.getItem('portfolio-locale') || 'es');
+
+  // Listen for changes from other components
+  document.addEventListener('locale-change', ((e: CustomEvent) => {
+    updateUI(e.detail.locale);
+  }) as EventListener);
+
+  toggle?.addEventListener('click', () => {
+    const newLocale = toggleLocale();
+    updateUI(newLocale);
+    // Toggle visibility of all bilingual content
+    document.querySelectorAll('[data-es], [data-en]').forEach(el => {
+      if (newLocale === 'en') {
+        el.style.display = el.hasAttribute('data-en') ? '' : 'none';
+      } else {
+        el.style.display = el.hasAttribute('data-es') ? '' : 'none';
+      }
+    });
+  });
+</script>

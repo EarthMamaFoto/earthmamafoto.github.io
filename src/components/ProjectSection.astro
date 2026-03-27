@@ -1,0 +1,66 @@
+---
+import VideoPlaceholder from './VideoPlaceholder.astro';
+import ProjectLinks from './ProjectLinks.astro';
+
+interface Props {
+  index: number;
+  title?: string;
+  titleEn?: string;
+  description?: string;
+  descriptionEn?: string;
+  order?: number;
+  videoUrl?: string;
+  thumbnail?: string;
+  links?: Array<{ title: string; url: string; type?: string }>;
+}
+
+const {
+  index,
+  title = '',
+  titleEn = '',
+  description = '',
+  descriptionEn = '',
+  videoUrl = '',
+  thumbnail = '',
+  links = [],
+} = Astro.props;
+
+const isEven = index % 2 === 1;
+const displayNumber = String(order || index + 1).padStart(2, '0');
+---
+
+<section class="w-full py-[60px] px-[120px] border-b border-border-warm flex items-center gap-[60px]" data-es>
+  {isEven ? (
+    <>
+      <!-- Text left -->
+      <div class="flex-1 flex flex-col gap-5 justify-center max-w-[500px]">
+        <span class="font-mono text-[13px] font-medium tracking-[2px] text-accent-ochre">
+          {displayNumber}
+        </span>
+        <h2 class="font-display text-[36px] leading-tight text-text-primary" data-es>{title}</h2>
+        {titleEn && <h2 class="font-display text-[36px] leading-tight text-text-primary hidden" data-en>{titleEn}</h2>}
+        <p class="text-[15px] leading-[1.6] text-text-secondary" data-es>{description}</p>
+        {descriptionEn && <p class="text-[15px] leading-[1.6] text-text-secondary hidden" data-en>{descriptionEn}</p>}
+        <ProjectLinks links={links} />
+      </div>
+      <!-- Video right -->
+      <VideoPlaceholder videoUrl={videoUrl} thumbnail={thumbnail} />
+    </>
+  ) : (
+    <>
+      <!-- Video left -->
+      <VideoPlaceholder videoUrl={videoUrl} thumbnail={thumbnail} />
+      <!-- Text right -->
+      <div class="flex-1 flex flex-col gap-5 justify-center max-w-[500px]">
+        <span class="font-mono text-[13px] font-medium tracking-[2px] text-accent-ochre">
+          {displayNumber}
+        </span>
+        <h2 class="font-display text-[36px] leading-tight text-text-primary" data-es>{title}</h2>
+        {titleEn && <h2 class="font-display text-[36px] leading-tight text-text-primary hidden" data-en>{titleEn}</h2>}
+        <p class="text-[15px] leading-[1.6] text-text-secondary" data-es>{description}</p>
+        {descriptionEn && <p class="text-[15px] leading-[1.6] text-text-secondary hidden" data-en>{descriptionEn}</p>}
+        <ProjectLinks links={links} />
+      </div>
+    </>
+  )}
+</section>

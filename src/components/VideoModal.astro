@@ -1,0 +1,47 @@
+---
+interface Props {
+  videoUrl?: string;
+  open?: boolean;
+  onClose?: () => void;
+}
+
+const { videoUrl, open = false, onClose } = Astro.props;
+---
+
+<div
+  class:list={[
+    'fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-300',
+    open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none',
+  ]}
+  id="video-modal"
+>
+  <!-- Backdrop -->
+  <div class="absolute inset-0 bg-black/80" id="video-modal-backdrop"></div>
+
+  <!-- Modal content -->
+  <div class="relative w-full max-w-4xl mx-4 aspect-video bg-dark">
+    <button
+      class="absolute -top-10 right-0 text-text-muted hover:text-text-primary transition-colors"
+      id="video-modal-close"
+      aria-label="Close video"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+
+    <div class="w-full h-full" id="video-modal-player">
+      <!-- Video.js player mounts here when open -->
+    </div>
+  </div>
+</div>
