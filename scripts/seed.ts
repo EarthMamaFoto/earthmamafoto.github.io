@@ -46,9 +46,9 @@ const projects = [
     descriptionEn: 'Historical recovery of the Worker Women\'s Training Center. Interviews with three generations of women.',
     order: 2,
     media: [
+      { _type: 'mediaItem', title: 'Katiana', url: 'https://www.youtube.com/watch?v=HyN3LsIS4Tk', type: 'youtube' },
       { _type: 'mediaItem', title: 'Ana Báez', url: 'https://www.youtube.com/watch?v=6FjA_as6UXU', type: 'youtube' },
       { _type: 'mediaItem', title: 'Vivienne Solís', url: 'https://www.youtube.com/watch?v=3797QaUp3vU', type: 'youtube' },
-      { _type: 'mediaItem', title: 'Katiana', url: 'https://www.youtube.com/watch?v=HyN3LsIS4Tk', type: 'youtube' },
       { _type: 'mediaItem', title: 'Katiana Reel', url: 'https://www.instagram.com/reel/DHBo510vS8y/', type: 'instagram' },
     ],
   },
