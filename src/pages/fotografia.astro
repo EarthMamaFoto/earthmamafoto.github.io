@@ -65,6 +65,16 @@ const photoList = [
   <!-- Lightbox modal -->
   <div id="gallery-lightbox" class="fixed inset-0 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
     <div class="absolute inset-0 bg-black/90" id="lightbox-backdrop"></div>
+    <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors z-10 p-2">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m15 18-6-6 6-6"/>
+      </svg>
+    </button>
+    <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors z-10 p-2">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="m9 18 6-6-6-6"/>
+      </svg>
+    </button>
     <button id="lightbox-close" class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors z-10">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M18 6 6 18M6 6l12 12"/>
@@ -80,16 +90,26 @@ function initGalleryLightbox() {
   const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
   const backdrop = document.getElementById('lightbox-backdrop');
   const closeBtn = document.getElementById('lightbox-close');
+  const prevBtn = document.getElementById('lightbox-prev');
+  const nextBtn = document.getElementById('lightbox-next');
   
-  document.querySelectorAll('.gallery-image').forEach(btn => {
+  const images = Array.from(document.querySelectorAll('.gallery-image')).map(btn => btn.getAttribute('data-img-src')).filter(Boolean) as string[];
+  let currentIndex = 0;
+  
+  function showImage(index: number) {
+    currentIndex = (index + images.length) % images.length;
+    if (lightboxImg && images[currentIndex]) {
+      lightboxImg.src = images[currentIndex];
+    }
+  }
+  
+  document.querySelectorAll('.gallery-image').forEach((btn, idx) => {
     btn.addEventListener('click', () => {
-      const src = btn.getAttribute('data-img-src');
-      if (src && lightboxImg) {
-        lightboxImg.src = src;
-        lightbox?.classList.remove('opacity-0', 'pointer-events-none');
-        lightbox?.classList.add('opacity-100', 'pointer-events-auto');
-        document.body.style.overflow = 'hidden';
-      }
+      currentIndex = idx;
+      showImage(currentIndex);
+      lightbox?.classList.remove('opacity-0', 'pointer-events-none');
+      lightbox?.classList.add('opacity-100', 'pointer-events-auto');
+      document.body.style.overflow = 'hidden';
     });
   });
   
@@ -100,9 +120,15 @@ function initGalleryLightbox() {
     setTimeout(() => { if (lightboxImg) lightboxImg.src = ''; }, 300);
   }
   
+  prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); showImage(currentIndex - 1); });
+  nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); showImage(currentIndex + 1); });
   closeBtn?.addEventListener('click', close);
   backdrop?.addEventListener('click', close);
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+    if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+  });
 }
 
 initGalleryLightbox();
