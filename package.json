@@ -7,7 +7,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "seed": "npx tsx scripts/seed.ts"
+    "seed": "npx tsx scripts/seed.ts",
+    "sanity": "sanity dev --port 3333"
   },
   "dependencies": {
     "@sanity/client": "^7.20.0",

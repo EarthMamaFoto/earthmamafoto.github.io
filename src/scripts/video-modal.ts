@@ -52,6 +52,20 @@ export function initVideoModal(): void {
     return null;
   }
 
+  function toInstagramEmbed(url: string): string | null {
+    if (url.includes('instagram.com')) {
+      const reelMatch = url.match(/instagram\.com\/reel\/([a-zA-Z0-9_-]+)/);
+      if (reelMatch) {
+        return `https://www.instagram.com/reel/${reelMatch[1]}/embed/`;
+      }
+      const postMatch = url.match(/instagram\.com\/p\/([a-zA-Z0-9_-]+)/);
+      if (postMatch) {
+        return `https://www.instagram.com/p/${postMatch[1]}/embed/`;
+      }
+    }
+    return null;
+  }
+
   document.addEventListener('click', (e) => {
     const trigger = (e.target as HTMLElement).closest('[data-video-trigger]') as HTMLElement | null;
     if (!trigger) return;
@@ -59,14 +73,16 @@ export function initVideoModal(): void {
     const videoUrl = trigger.getAttribute('data-video-url');
     if (!videoUrl) return;
 
-    if (videoUrl.includes('instagram.com')) {
+    const mediaType = trigger.getAttribute('data-media-type');
+
+    if (mediaType === 'external') {
       window.open(videoUrl, '_blank', 'noopener,noreferrer');
       return;
     }
 
-    const mediaType = trigger.getAttribute('data-media-type');
-    if (mediaType === 'external') {
-      window.open(videoUrl, '_blank', 'noopener,noreferrer');
+    const instagramEmbed = toInstagramEmbed(videoUrl);
+    if (instagramEmbed) {
+      openModal(instagramEmbed);
       return;
     }
 
