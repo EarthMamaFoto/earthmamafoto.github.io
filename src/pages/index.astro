@@ -182,17 +182,26 @@ if (hasSanityConfig) {
   />
 
   <!-- Fotografía preview section -->
-  <section class="w-full">
-    <a href="/fotografia" class="flex overflow-x-auto">
-      <img src="/photos/DSC00329.webp" alt="" class="w-[50vw] h-[50vh] object-cover flex-shrink-0" loading="lazy" />
-      <img src="/photos/DSC00485.webp" alt="" class="w-[50vw] h-[50vh] object-cover flex-shrink-0" loading="lazy" />
-      <img src="/photos/DSC00541-2.webp" alt="" class="w-[50vw] h-[50vh] object-cover flex-shrink-0" loading="lazy" />
-      <img src="/photos/DSC01256.webp" alt="" class="w-[50vw] h-[50vh] object-cover flex-shrink-0" loading="lazy" />
-      <img src="/photos/DSC03854.webp" alt="" class="w-[50vw] h-[50vh] object-cover flex-shrink-0" loading="lazy" />
+  <section class="w-full py-10 md:py-[60px] px-6 md:px-[120px] border-b border-border-warm">
+    <div class="mb-8">
+      <h2 class="font-display text-[28px] md:text-[36px] text-text-primary" data-es>Fotografía</h2>
+      <h2 class="font-display text-[28px] md:text-[36px] text-text-primary hidden" data-en>Photography</h2>
+    </div>
+    <a href="/fotografia" class="flex flex-col md:flex-row gap-4 md:gap-[20px]">
+      <img src="/photos/DSC00329.webp" alt="" class="w-full md:w-auto md:flex-1 h-[40vh] md:h-[300px] object-cover flex-shrink-0" loading="lazy" />
+      <img src="/photos/DSC00485.webp" alt="" class="w-full md:w-auto md:flex-1 h-[40vh] md:h-[300px] object-cover flex-shrink-0" loading="lazy" />
+      <img src="/photos/DSC00541-2.webp" alt="" class="w-full md:w-auto md:flex-1 h-[40vh] md:h-[300px] object-cover flex-shrink-0" loading="lazy" />
+      <img src="/photos/DSC01256.webp" alt="" class="w-full md:w-auto md:flex-1 h-[40vh] md:h-[300px] object-cover flex-shrink-0" loading="lazy" />
+      <img src="/photos/DSC03854.webp" alt="" class="w-full md:w-auto md:flex-1 h-[40vh] md:h-[300px] object-cover flex-shrink-0" loading="lazy" />
     </a>
   </section>
 
   <!-- Audiovisual projects section -->
+   <section class="w-full py-10 md:py-[60px] px-6 md:px-[120px] border-b border-border-warm">
+    <div class="mb-8">
+      <h2 class="font-display text-[28px] md:text-[36px] text-text-primary" data-es>Audiovisual</h2>
+      <h2 class="font-display text-[28px] md:text-[36px] text-text-primary hidden" data-en>Audiovisual</h2>
+    </div>
   {projects.map((project, i) => {
     const firstMedia = project.media?.[0];
     const thumbnail = getThumbnailUrl(project);
@@ -215,7 +224,7 @@ if (hasSanityConfig) {
       />
     );
   })}
-
+  </section>
   <Footer
     footerQuoteTitleEs={settings.footerQuoteTitleEs}
     footerQuoteTitleEn={settings.footerQuoteTitleEn}
